@@ -7,6 +7,6 @@ func TestHello(t *testing.T) {
 	want := "Mateen has started learning more about TDD!"
 
 	if got != want {
-		t.Errorf("got %s, wanted %s", got, want)
+		t.Errorf("got %q, wanted %q", got, want)
 	}
 }

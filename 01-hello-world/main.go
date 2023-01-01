@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+var helloWorldMessage string = "Mateen has started learning more about TDD!"
+
 func main() {
-	fmt.Println("Mateen has started learning more about TDD!")
+	fmt.Println(hello())
+}
+
+func hello() string{
+	return helloWorldMessage
 }

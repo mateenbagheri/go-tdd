@@ -8,6 +8,6 @@ func main() {
 	fmt.Println(hello())
 }
 
-func hello() string{
+func hello() string {
 	return helloWorldMessage
 }

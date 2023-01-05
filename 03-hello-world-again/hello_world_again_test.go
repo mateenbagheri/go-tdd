@@ -10,7 +10,7 @@ func TestHelloWorldAgain(t *testing.T) {
 	})
 
 	t.Run("Saying hello to the world", func(t *testing.T) {
-		got := helloWorldAgain("s")
+		got := helloWorldAgain("")
 		want := "Hello, World!"
 		assertCorrectMessage(t, got, want)
 	})

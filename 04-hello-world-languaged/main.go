@@ -4,31 +4,53 @@ import (
 	"fmt"
 )
 
-const defaultGreeting string = "Hello, World!"
-const defaultGreetingSpanish string = "Hola, World!"
-const greetingMsg string = "Hello"
-const greetingMsgSpanish string= "Hola"
-const defaultGreetingFrench string = "Bonjour, World!"
-const greetingMsgFrench string = "Bonjour"
+const engPrefix string = "Hello"
+const frPrefix string = "Bonjour"
+const spPrefix string = "Hola"
+
+const defaultSpWorld string = "Mundo"
+const defaultFrWorld string = "Monde"
+const defaultEngWorld string = "World"
 
 func main() {
 	fmt.Println(helloWordLanguaged("mateen", "Spanish"))
 }
 
 func helloWordLanguaged(name, language string) string {
-	if language == "Spanish" {
-		if name == "" {
-			return defaultGreetingSpanish
-		}
-		return fmt.Sprintf("%s, %s", greetingMsgSpanish, name)
-	} else if language == "French" {
-		if name == "" {
-			return defaultGreetingFrench
-		}
-		return fmt.Sprintf("%s, %s", greetingMsgFrench, name)
+	prefix := prefixGenerator(language)
+	if name == "" {
+		world := worldWordGenerator(language)
+		return fmt.Sprintf("%s, %s", prefix, world)
 	}
-	if name != "" {
-		return fmt.Sprintf("%s, %s", greetingMsg, name)
+	return fmt.Sprintf("%s, %s", prefix, name)
+}
+
+func worldWordGenerator(language string) string {
+	var world string
+	switch language {
+	case "Spanish":
+		world = defaultSpWorld
+	case "French":
+		world = defaultFrWorld
+	case "English":
+		world = defaultEngWorld
+	default:
+		world = defaultEngWorld
 	}
-	return defaultGreeting
+	return world
+}
+
+func prefixGenerator(language string) string {
+	var prefix string
+	switch language {
+	case "Spanish":
+		prefix = spPrefix
+	case "French":
+		prefix = frPrefix
+	case "English":
+		prefix = engPrefix
+	default:
+		prefix = engPrefix
+	}
+	return prefix
 }

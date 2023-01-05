@@ -10,7 +10,7 @@ func TestHelloWorldLanguaged(t *testing.T) {
 	})
 
 	t.Run("testing no name parameter, Spanish", func(t *testing.T) {
-		want := "Hola, World!"
+		want := "Hola, Mundo"
 		got := helloWordLanguaged("", "Spanish")
 		assertCorrectMessage(t, got, want)
 	})
@@ -21,7 +21,7 @@ func TestHelloWorldLanguaged(t *testing.T) {
 		assertCorrectMessage(t, want, got)
 	})
 	t.Run("testing no name parameter, no language parameter", func(t *testing.T) {
-		want := "Hello, World!"
+		want := "Hello, World"
 		got := helloWordLanguaged("", "")
 		assertCorrectMessage(t, got, want)
 	})
@@ -39,7 +39,7 @@ func TestHelloWorldLanguaged(t *testing.T) {
 	})
 
 	t.Run("the one with french language input and no name parameter", func(t *testing.T) {
-		want := "Bonjour, World!"
+		want := "Bonjour, Monde"
 		got := helloWordLanguaged("", "French")
 		assertCorrectMessage(t, got, want)
 	})

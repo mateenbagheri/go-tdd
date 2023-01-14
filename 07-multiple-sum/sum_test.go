@@ -14,6 +14,6 @@ func TestMultipleSum(t *testing.T) {
 func assertCorrectMessage(t testing.TB, got int, want int) {
 	t.Helper()
 	if got != want {
-		t.Errorf("wanted %d but got number %n instead", want, got)
+		t.Errorf("wanted %d but got number %d instead", want, got)
 	}
 }

@@ -45,16 +45,18 @@ func TestArea(t *testing.T) {
 
 func TestAreaTableDriven(t *testing.T) {
 	areaTests := []struct {
-		shape Shape
-		want  float64
+		shape         Shape
+		wantArea      float64
+		wantParameter float64
 	}{
-		{Rectangle{12, 6}, 72.0},
-		{Circle{10}, 314.1592653589793},
+		{Rectangle{12, 6}, 72.0, 36.0},
+		{Circle{10}, 314.1592653589793, 0},
+		{Triangle{10, 8.66025403784, 10, 10, 10}, 43.3012701892, 30},
 	}
 	for _, tt := range areaTests {
 		got := tt.shape.Area()
-		if got != tt.want {
-			t.Errorf("want %g, but instead got %g", tt.want, got)
+		if got != tt.wantArea {
+			t.Errorf("wanted %g, but instead got %g", tt.wantArea, got)
 		}
 	}
 }
